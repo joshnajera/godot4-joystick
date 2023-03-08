@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_2"
+   data-name="Layer 2"
+   viewBox="0 0 68 68"
+   version="1.1"
+   sodipodi:docname="inner.svg"
+   width="68"
+   height="68"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="22.605406"
+     inkscape:cx="35.389765"
+     inkscape:cy="33.487565"
+     inkscape:window-width="3840"
+     inkscape:window-height="2089"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1-2" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">
+      .cls-1 {
+        fill: #a7a9ac;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #939598;
+        stroke-miterlimit: 10;
+        stroke-width: .25px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g
+     id="Layer_1-2"
+     data-name="Layer 1"
+     transform="translate(1.87,1.87)">
+    <rect
+       class="cls-2"
+       x="0.13"
+       y="0.13"
+       width="64"
+       height="64"
+       rx="32"
+       ry="32"
+       id="rect6"
+       style="stroke-width:4;stroke-dasharray:none" />
+    <g
+       id="g1759"
+       transform="translate(0,0.92898016)">
+      <rect
+         class="cls-1"
+         x="30.196537"
+         y="-61.471611"
+         width="2.0287454"
+         height="4.2745471"
+         rx="0.86592793"
+         ry="0.90672213"
+         transform="matrix(1.8275524e-4,0.99999998,-0.99999999,1.6668054e-4,0,0)"
+         id="use1743"
+         inkscape:label="rect14"
+         style="fill:#a7a9ac;stroke:#939598;stroke-width:0.834;stroke-miterlimit:10;stroke-dasharray:none"
+         inkscape:transform-center-x="-16.500478"
+         inkscape:tile-x0="57.721297"
+         inkscape:tile-y0="31.568422" />
+      <rect
+         class="cls-1"
+         x="-32.216354"
+         y="3.6258054"
+         width="2.0287454"
+         height="4.2745471"
+         rx="0.86592793"
+         ry="0.90672213"
+         transform="matrix(-1.8275524e-4,-0.99999998,0.99999999,-1.6668054e-4,0,0)"
+         id="use1747"
+         inkscape:label="rect14"
+         style="fill:#a7a9ac;stroke:#939598;stroke-width:0.834;stroke-miterlimit:10;stroke-dasharray:none"
+         inkscape:transform-center-x="-16.500478"
+         inkscape:tile-x0="57.721297"
+         inkscape:tile-y0="31.568422" />
+    </g>
+    <g
+       id="g1765"
+       transform="rotate(-90,33.018901,31.66551)">
+      <rect
+         class="cls-1"
+         x="30.196537"
+         y="-61.471611"
+         width="2.0287454"
+         height="4.2745471"
+         rx="0.86592793"
+         ry="0.90672213"
+         transform="matrix(1.8275524e-4,0.99999998,-0.99999999,1.6668054e-4,0,0)"
+         id="rect1761"
+         inkscape:label="rect14"
+         style="fill:#a7a9ac;stroke:#939598;stroke-width:0.834;stroke-miterlimit:10;stroke-dasharray:none"
+         inkscape:transform-center-x="-16.500478"
+         inkscape:tile-x0="57.721297"
+         inkscape:tile-y0="31.568422" />
+      <rect
+         class="cls-1"
+         x="-32.216354"
+         y="3.6258054"
+         width="2.0287454"
+         height="4.2745471"
+         rx="0.86592793"
+         ry="0.90672213"
+         transform="matrix(-1.8275524e-4,-0.99999998,0.99999999,-1.6668054e-4,0,0)"
+         id="rect1763"
+         inkscape:label="rect14"
+         style="fill:#a7a9ac;stroke:#939598;stroke-width:0.834;stroke-miterlimit:10;stroke-dasharray:none"
+         inkscape:transform-center-x="-16.500478"
+         inkscape:tile-x0="57.721297"
+         inkscape:tile-y0="31.568422" />
+    </g>
+  </g>
+</svg>

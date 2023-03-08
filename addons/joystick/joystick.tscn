@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyissvogocr44"]
+
+[ext_resource type="Texture2D" uid="uid://d3e3pohy0sj3t" path="res://addons/joystick/outer.svg" id="1_tytwk"]
+[ext_resource type="Script" path="res://addons/joystick/joystick.gd" id="2_eofdc"]
+[ext_resource type="Texture2D" uid="uid://cc4gtyxyrx4uf" path="res://addons/joystick/inner.svg" id="3_14en0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rm106"]
+radius = 90.0
+
+[node name="Joystick" type="TouchScreenButton"]
+self_modulate = Color(1, 1, 1, 0.5)
+position = Vector2(63, 407)
+texture_normal = ExtResource("1_tytwk")
+shape = SubResource("CircleShape2D_rm106")
+script = ExtResource("2_eofdc")
+
+[node name="inner" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.9)
+position = Vector2(96, 96)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_14en0")
+metadata/_edit_lock_ = true
