@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx3bmigtw3uxs"]
+[gd_scene load_steps=4 format=3 uid="uid://dx3bmigtw3uxs"]
 
 [ext_resource type="PackedScene" uid="uid://dyissvogocr44" path="res://addons/joystick/joystick.tscn" id="1_1dbvj"]
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="2_yiaqr"]
+[ext_resource type="Texture2D" uid="uid://cl6c44qas3mpa" path="res://icon.svg" id="3_qh0f4"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -32,3 +34,20 @@ grow_vertical = 0
 
 [node name="Joystick2" parent="Right" instance=ExtResource("1_1dbvj")]
 position = Vector2(-220, -220)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(573, 282)
+script = ExtResource("2_yiaqr")
+
+[node name="Icon2" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, -70)
+scale = Vector2(0.159995, 1)
+texture = ExtResource("3_qh0f4")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D/Icon2"]
+position = Vector2(0, 70)
+scale = Vector2(6.25019, 1)
+texture = ExtResource("3_qh0f4")
+
+[connection signal="joystick_input" from="Left/Joystick" to="CharacterBody2D" method="_on_joystick_joystick_input"]
+[connection signal="joystick_input" from="Right/Joystick2" to="CharacterBody2D" method="_on_joystick_2_joystick_input"]

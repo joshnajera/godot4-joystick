@@ -8,7 +8,7 @@ var direction : Vector2 = Vector2(0,0)
 var strength : float = 0.0
 var was_pressed : bool = false
 var button_index : int = -1
-
+var held : bool = false
 
 @onready var half_width := self.texture_normal.get_width()/2
 @onready var half_height := self.texture_normal.get_height()/2
@@ -29,15 +29,18 @@ func _ready():
 
 
 func _input(event):
+	print(event)
 	if not event is InputEventScreenTouch and not event is InputEventScreenDrag: # Not a touch
 		return
-	print(event)
+
 	if button_index != -1 and button_index != event.index: # No index, or index 
 		return
 	if event is InputEventScreenTouch and event.pressed == false:
 		inner_joystick_image.global_position = global_position + Vector2(half_width,half_height)
 		button_index = -1
+		emit_signal("joystick_input", 0, Vector2(0,0), 1)
 		emit_signal("joystick_released")
+		held = false
 		return
 	if is_pressed(): # Button still in pressed state
 		strength = event.position.distance_to(global_position+Vector2(half_width,half_height))
@@ -46,10 +49,10 @@ func _input(event):
 		if button_index != event.index:
 			return
 		strength = smoothstep(0,radius,strength)
-		direction = event.position.direction_to(global_position+Vector2(half_width,half_height))
-		emit_signal("joystick_input", strength, direction)
+		direction = event.position.direction_to(global_position+Vector2(half_width,half_height)) * -1
 		inner_joystick_image.global_position = clamp_to_circle(global_position+Vector2(half_width,half_height), radius, event.position)
 		get_viewport().set_input_as_handled()
+		held = true
 
 
 func clamp_to_circle(point: Vector2, radius: float, value: Vector2) -> Vector2:
@@ -57,3 +60,7 @@ func clamp_to_circle(point: Vector2, radius: float, value: Vector2) -> Vector2:
 	if direction.length_squared() > radius * radius:
 		direction = direction.normalized() * radius
 	return point + direction
+
+func _process(delta):
+	if held:
+		emit_signal("joystick_input", strength, direction, delta)
