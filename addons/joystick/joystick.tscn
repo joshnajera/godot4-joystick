@@ -16,7 +16,7 @@ script = ExtResource("2_eofdc")
 
 [node name="inner" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.9)
-position = Vector2(96, 96)
+position = Vector2(99, 99)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_14en0")
 metadata/_edit_lock_ = true

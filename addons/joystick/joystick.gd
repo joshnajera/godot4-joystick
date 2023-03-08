@@ -1,6 +1,6 @@
 @tool
-@icon("res://addons/joystick/joystick.svg")
 extends TouchScreenButton
+
 
 
 @export_range(0.0,1.0) var inner_opacity : float = 0.9
@@ -29,23 +29,27 @@ func _ready():
 
 
 func _input(event):
-	if not event is InputEventScreenTouch and not event is InputEventScreenDrag:
+	if not event is InputEventScreenTouch and not event is InputEventScreenDrag: # Not a touch
 		return
-	if button_index != -1 and button_index != event.index:
+	print(event)
+	if button_index != -1 and button_index != event.index: # No index, or index 
 		return
 	if event is InputEventScreenTouch and event.pressed == false:
 		inner_joystick_image.global_position = global_position + Vector2(half_width,half_height)
 		button_index = -1
 		emit_signal("joystick_released")
 		return
-	if event is InputEventScreenTouch or event is InputEventScreenDrag:
-		if is_pressed():
+	if is_pressed(): # Button still in pressed state
+		strength = event.position.distance_to(global_position+Vector2(half_width,half_height))
+		if strength <= radius:
 			button_index = event.index
-			strength = event.position.distance_to(global_position+Vector2(half_width,half_height))
-			strength = smoothstep(0,radius,strength)
-			direction = event.position.direction_to(global_position+Vector2(half_width,half_height))
-			emit_signal("joystick_input", strength, direction)
-			inner_joystick_image.global_position = clamp_to_circle(global_position+Vector2(half_width,half_height), radius, event.position)
+		if button_index != event.index:
+			return
+		strength = smoothstep(0,radius,strength)
+		direction = event.position.direction_to(global_position+Vector2(half_width,half_height))
+		emit_signal("joystick_input", strength, direction)
+		inner_joystick_image.global_position = clamp_to_circle(global_position+Vector2(half_width,half_height), radius, event.position)
+		get_viewport().set_input_as_handled()
 
 
 func clamp_to_circle(point: Vector2, radius: float, value: Vector2) -> Vector2:
