@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx3bmigtw3uxs"]
+
+[ext_resource type="PackedScene" uid="uid://dyissvogocr44" path="res://addons/joystick/joystick.tscn" id="1_1dbvj"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="Joystick" parent="Left" instance=ExtResource("1_1dbvj")]
+position = Vector2(20, -220)
+
+[node name="Right" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Joystick2" parent="Right" instance=ExtResource("1_1dbvj")]
+position = Vector2(-220, -220)

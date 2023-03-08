@@ -1,21 +1,19 @@
 @tool
 extends TouchScreenButton
 
-
-
 @export_range(0.0,1.0) var inner_opacity : float = 0.9
 @export_range(0.0,1.0) var outer_opacity : float = 0.5
-
 
 var direction : Vector2 = Vector2(0,0)
 var strength : float = 0.0
 var was_pressed : bool = false
 var button_index : int = -1
 
-@onready var radius = shape.radius
+
 @onready var half_width := self.texture_normal.get_width()/2
 @onready var half_height := self.texture_normal.get_height()/2
-@onready var inner_joystick_image = $inner
+@onready var inner_joystick_image : Sprite2D = $inner
+@onready var radius :float = 75.0
 
 
 signal joystick_input
@@ -26,6 +24,8 @@ func _ready():
 	self_modulate = Color(1,1,1,outer_opacity)	
 	$inner.modulate = Color(1,1,1,inner_opacity)
 	$inner.position = Vector2(half_width,half_height)
+	if shape is CircleShape2D:
+		radius = shape.radius
 
 
 func _input(event):
