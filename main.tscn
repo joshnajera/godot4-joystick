@@ -5,3 +5,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Joystick" parent="." instance=ExtResource("1_ytp2m")]
+
+[node name="Joystick2" parent="." instance=ExtResource("1_ytp2m")]
+position = Vector2(920, 416)
