@@ -37,7 +37,7 @@ func _input(event):
 	if event is InputEventScreenTouch and event.pressed == false:
 		inner_joystick_image.global_position = global_position + Vector2(half_width,half_height)
 		button_index = -1
-		emit_signal("joystick_input", 0, Vector2(0,0), 1)
+		emit_signal("joystick_input", 0, Vector2(0,0), 0)
 		emit_signal("joystick_released")
 		held = false
 		return
