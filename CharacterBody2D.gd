@@ -17,7 +17,6 @@ func _physics_process(delta):
 
 
 func _on_joystick_joystick_input(strength, dir, delta):
-	print(rotation)
 	direction = dir
 
 func _on_joystick_2_joystick_input(strength, dir, delta):

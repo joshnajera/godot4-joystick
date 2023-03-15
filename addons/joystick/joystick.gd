@@ -29,7 +29,6 @@ func _ready():
 
 
 func _input(event):
-	print(event)
 	if not event is InputEventScreenTouch and not event is InputEventScreenDrag: # Not a touch
 		return
 

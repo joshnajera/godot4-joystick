@@ -12,28 +12,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Left" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-grow_vertical = 0
-
-[node name="Joystick" parent="Left" instance=ExtResource("1_1dbvj")]
-position = Vector2(20, -220)
-
-[node name="Right" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="Joystick2" parent="Right" instance=ExtResource("1_1dbvj")]
-position = Vector2(-220, -220)
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(562.5, 293.5)
+scale = Vector2(9.92969, 6.16406)
+texture = ExtResource("3_qh0f4")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(573, 282)
@@ -49,5 +31,33 @@ position = Vector2(0, 70)
 scale = Vector2(6.25019, 1)
 texture = ExtResource("3_qh0f4")
 
-[connection signal="joystick_input" from="Left/Joystick" to="CharacterBody2D" method="_on_joystick_joystick_input"]
-[connection signal="joystick_input" from="Right/Joystick2" to="CharacterBody2D" method="_on_joystick_2_joystick_input"]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Left" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="Joystick" parent="CanvasLayer/Left" instance=ExtResource("1_1dbvj")]
+position = Vector2(20, -220)
+
+[node name="Right" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Joystick2" parent="CanvasLayer/Right" instance=ExtResource("1_1dbvj")]
+position = Vector2(-220, -220)
+
+[connection signal="joystick_input" from="CanvasLayer/Left/Joystick" to="CharacterBody2D" method="_on_joystick_joystick_input"]
+[connection signal="joystick_input" from="CanvasLayer/Right/Joystick2" to="CharacterBody2D" method="_on_joystick_2_joystick_input"]
