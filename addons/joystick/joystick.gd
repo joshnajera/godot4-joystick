@@ -10,8 +10,8 @@ var was_pressed : bool = false
 var button_index : int = -1
 var held : bool = false
 
-@onready var half_width := self.texture_normal.get_width()/2
-@onready var half_height := self.texture_normal.get_height()/2
+@onready var half_width := self.texture_normal.get_width()/2 * scale.x
+@onready var half_height := self.texture_normal.get_height()/2 * scale.y
 @onready var inner_joystick_image : Sprite2D = $inner
 @onready var radius :float = 75.0
 
@@ -20,10 +20,9 @@ signal joystick_input
 signal joystick_released
 
 func _ready():
-	inner_joystick_image.position = Vector2(half_width,half_height)
-	self_modulate = Color(1,1,1,outer_opacity)	
+	self_modulate = Color(1,1,1,outer_opacity)
 	$inner.modulate = Color(1,1,1,inner_opacity)
-	$inner.position = Vector2(half_width,half_height)
+	$inner.global_position = global_position + Vector2(half_width,half_height)
 	if shape is CircleShape2D:
 		radius = shape.radius
 
